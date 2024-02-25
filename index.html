@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SUDOKU</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="main" class="">
+      <h1>SUDOKU</h1>
+      <h2 id="error">0</h2>
+
+      <div id="board">
+        <div id="pop-box">
+          <div id="errordata">
+            <h2>wrong - <span id="wrongCnt">0</span></h2>
+            <button id="replay">replay</button>
+          </div>
+        </div>
+      </div>
+      <div id="btns">
+        <button class="btn" id="erase">erase</button>
+        <button class="btn" id="solve">solution</button>
+        <button class="btn" id="new">newgame</button>
+      </div>
+      <div id="digits"></div>
+    </div>
+
+    <script src="sudoku.js"></script>
+    <script src="sudokuLogic.js"></script>
+  </body>
+</html>
