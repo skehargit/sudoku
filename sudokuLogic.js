@@ -27,13 +27,33 @@ window.onload = () => {
 var selectedNumber = null;
 
 let error = 0;
+// var bgMode=0;
 
 // game started on loding
 function setGame(question, solution) {
   document.getElementById("new").addEventListener("click", function () {
     location.reload();
   });
-
+  // dark mode light mode 
+  
+  var dark=document.getElementById('dark');
+  var light = document.getElementById('light');
+  var body=document.getElementById('main');
+  
+  dark.addEventListener('click',()=>{
+    light.style.display='block';
+    light.style.color='white'
+    dark.style.display='none';
+    body.style.backgroundColor='black'
+    
+    document.documentElement.setAttribute('data-theme', 'dark');
+  })
+  light.addEventListener('click',()=>{
+    light.style.display='none';
+    dark.style.display='block';
+    body.style.backgroundColor='white'
+    document.documentElement.setAttribute('data-theme', 'light');
+  })
   //digits 1-9 & select function
   for (let i = 1; i <= 9; i++) {
     let digit = document.createElement("div");
@@ -67,7 +87,9 @@ function setGame(question, solution) {
       });
       // for border to know that it is a 3*3 cube
       if (r == 2 || r == 5 || r == 8) {
+        
         box.style.borderBottom = "2px solid black";
+        
       }
       if (c == 0) {
         box.style.borderLeft = "2px solid black";
